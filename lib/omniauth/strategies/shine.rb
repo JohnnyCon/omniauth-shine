@@ -32,13 +32,15 @@ module OmniAuth
       end
 
       def raw_info
-        # @raw_info ||= access_token.get('https://api.misfitwearables.com/move/v1/user/me/profile').parsed
-        @raw_info
+        @raw_info ||= access_token.get('https://api.misfitwearables.com/move/v1/user/me/profile')
+        # @raw_info
       end
 
       private
 
       def client_params
+        puts "reached the client params area"
+
         {:client_id => options[:client_id], :redirect_uri => callback_url ,:response_type => "code", :scope => DEFAULT_SCOPE}
       end
     end
