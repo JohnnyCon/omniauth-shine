@@ -33,6 +33,7 @@ module OmniAuth
       end
 
       def raw_info
+        puts "entering raw_info"
         puts "what is auth_hash:", auth_hash
         puts "what is access_token:", access_token
 
@@ -40,6 +41,7 @@ module OmniAuth
         # response = HTTParty.get(url, headers: { 'Authorization' => "Bearer #{auth_hash.token}" })
 
         @raw_info ||= { name: "blah" }
+        @raw_info
 
         # @raw_info = response
 
