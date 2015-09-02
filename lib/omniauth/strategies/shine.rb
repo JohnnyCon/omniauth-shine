@@ -1,4 +1,5 @@
 require 'omniauth-oauth2'
+require 'httparty'
 
 module OmniAuth
   module Strategies
@@ -32,7 +33,17 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('https://api.misfitwearables.com/move/v1/user/me/profile')
+        puts "what is access_token:", access_token
+        puts "what is auth_hash:", auth_hash
+
+        # url = "https://api.misfitwearables.com/move/resource/v1/user/me/profile"
+        # response = HTTParty.get(url, headers: { 'Authorization' => "Bearer #{auth_hash.token}" })
+
+        @raw_info = {name: "blah"}
+
+        # @raw_info = response
+
+        # @raw_info ||= access_token.get('https://api.misfitwearables.com/move/v1/user/me/profile')
         # @raw_info
       end
 
