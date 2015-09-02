@@ -33,7 +33,7 @@ module OmniAuth
       end
 
       def raw_info
-        puts "what is access_token:", access_token
+        # puts "what is access_token:", access_token
         puts "what is auth_hash:", auth_hash
 
         # url = "https://api.misfitwearables.com/move/resource/v1/user/me/profile"
