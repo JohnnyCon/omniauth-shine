@@ -41,7 +41,8 @@ module OmniAuth
 
         # url = "https://api.misfitwearables.com/move/resource/v1/user/me/profile"
         # response = HTTParty.get(url, headers: { 'Authorization' => "Bearer #{auth_hash.token}" })
-        @raw_info ||= MultiJson.load(access_token.get('"https://api.misfitwearables.com/move/resource/v1/user/me/profile').body)
+        # url = URI.encode(https://api.misfitwearables.com/move/resource/v1/user/me/profile)
+        @raw_info ||= MultiJson.load(access_token.get('https://api.misfitwearables.com/move/resource/v1/user/me/profile').body)
         @raw_info
 
         # @raw_info = response
